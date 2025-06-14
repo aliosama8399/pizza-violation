@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Violation Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pizza Violation Detection</h1>
+        <div class="upload-section">
+            <input type="file" id="video-upload" accept="video/*">
+            <button id="process-video">Process Video</button>
+        </div>
+        <div class="results-section">
+            <h2>Violations Detected: <span id="violation-count">0</span></h2>
+            <div id="frames-container" class="frames-grid"></div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
