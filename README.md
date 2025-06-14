@@ -1,36 +1,60 @@
-# ==================== SETUP INSTRUCTIONS ====================
-"""
-SETUP INSTRUCTIONS:
+# Pizza Violation Detection System
 
-1. Install RabbitMQ:
-   sudo apt-get install rabbitmq-server
+## Overview
+A real-time monitoring system that detects food safety violations in pizza preparation, specifically tracking whether workers are using proper utensils (scoopers) when handling ingredients.
 
-2. Install Python dependencies:
-   pip install pika ultralytics opencv-python numpy fastapi uvicorn websockets
+## Features
+- Real-time detection of hand movements in ingredient areas
+- Violation detection when ingredients are handled without proper utensils
+- Live visualization of violations with annotated frames
+- WebSocket-based real-time updates
+- Frame-by-frame analysis with YOLO object detection
+- Region of Interest (ROI) monitoring for ingredient stations
 
-3. Run the system:
-   
-   # Terminal 1: Start Detection Service
-   python script.py detection
-   
-   # Terminal 2: Start Streaming Service  
-   python script.py streaming
-   
-   # Terminal 3: Process Video
-   python script.py video "path/to/video.mp4"
-   
-   # Or run everything together:
-   python script.py all "path/to/video.mp4"
+## Prerequisites
+- Python 3.8+
+- CUDA-compatible GPU (recommended for real-time processing)
+- Windows 10/11
 
-4. Database and frames will be saved in:
-   - violations.db (SQLite database)
-   - violation_frames/ (directory for violation frames)
+## Installation
 
-MESSAGE FLOW:
-Video Processor → [detections queue] → Detection Service → [streaming_results queue] → Streaming Service
-                                    ↓
-                                Database + Frame Storage
-"""
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/pizza-violation-detection.git
+cd pizza-violation-detection
+```
+
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Project Structure
+```
+pizza-violation-detection/
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── video_processor.py
+│   └── detection_service.py
+├── static/
+│   ├── style.css
+│   └── script.js
+├── templates/
+│   └── index.html
+├── uploaded_videos/
+├── violation_frames/
+├── README.md
+└── requirements.txt
+```
+
+## Usage
 
 ## How to Use the Website
 
@@ -131,3 +155,19 @@ If you encounter any issues:
    - Firefox
    - Edge
    - Safari
+
+## Configuration
+
+The system can be configured by modifying the following parameters in `video_processor.py`:
+- ROI coordinates for ingredient stations
+- Violation cooldown period
+- Hand-scooper proximity threshold
+- Detection confidence thresholds
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
