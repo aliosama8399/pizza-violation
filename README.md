@@ -84,13 +84,3 @@ The system can be configured by modifying the following parameters in `video_pro
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-MIT License - see LICENSE file for details
-
-## Authors
-- Your Name - Initial work - [YourGithub](https://github.com/yourusername)
-
-## Acknowledgments
-- YOLOv8 team for the object detection model
-- FastAPI team for the web framework
-- OpenCV community for computer vision tools
