@@ -9,13 +9,21 @@
 <body>
     <div class="container">
         <h1>Pizza Violation Detection</h1>
+        
         <div class="upload-section">
             <input type="file" id="video-upload" accept="video/*">
             <button id="process-video">Process Video</button>
         </div>
+        
+        <div id="processed-video-container" class="video-container">
+            <!-- The processed video player will appear here -->
+        </div>
+
         <div class="results-section">
-            <h2>Violations Detected: <span id="violation-count">0</span></h2>
-            <div id="frames-container" class="frames-grid"></div>
+            <h2>Violations Log (<span id="violation-count">0</span>)</h2>
+            <div id="violations-log-container" class="violations-grid">
+                <!-- Violation details will be logged here -->
+            </div>
         </div>
     </div>
     <script src="/static/script.js"></script>
